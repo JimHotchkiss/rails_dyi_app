@@ -16,3 +16,7 @@ To get started, I wanted to get the basic join table figured out.
 * Category
     has_many :project_categories
     has_many :projects, through: :project_categories
+
+So, to get up and running, I can create a migration for projects, create a model, routes and views.  I can do the for categories, and users.  
+  ~ Should a do rails g resource?
+    * rails g resource Project, will build a migration, called 'projects', a model, a controller and routes.  
