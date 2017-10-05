@@ -25,4 +25,6 @@ PROBLEM! When I start the local server, rails s, it get tcp://0.0.0.0:3000 for m
 
 So, clearly I'm in a fowl mood.  The explanation offered from slack was actually helpful, and my app is up and running.  
 
-Okay, small accomplishment, but good way to end the day on: was able to render a message from the projects index page.  
+Okay, small accomplishment, but good way to end the day on: was able to render a message from the projects index page.
+
+I'm going to do a little styling.  I want to work on a basic template, that will include a drop down window for 'categories,' in addition to sign in, sign up, sign out and a home button.    
