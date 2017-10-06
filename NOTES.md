@@ -29,4 +29,15 @@ Okay, small accomplishment, but good way to end the day on: was able to render a
 
 I'm going to do a little styling.  I want to work on a basic template, that will include a drop down window for 'categories,' in addition to sign in, sign up, sign out and a home button.  
 
-At this point, I'm kind of messing around.  I working on some styling.  I added an image, and messing with some opacity.  Trying to figure out how to make it a back ground image.    
+At this point, I'm kind of messing around.  I working on some styling.  I added an image, and messing with some opacity.  Trying to figure out how to make it a back ground image.
+
+Preparing for work today, I was reviewing one of the first lessons, and decided I'm going to make some basic test for this app.  
+  * The helpers, mailers, and models directories are meant to hold tests for view helpers, mailers, and models, respectively. The controllers directory is meant to hold tests for controllers, routes, and views. The integration directory is meant to hold tests for interactions between controllers.
+
+Wrote and ran my first test
+ * test "should not save project without title" do
+     project = Porject.new
+     assert_not project.save
+   end
+ * terminal ~> rails test test/models/project_test.rb:9
+  ~ Where :9 is the line we want tested.  
