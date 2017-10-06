@@ -27,4 +27,6 @@ So, clearly I'm in a fowl mood.  The explanation offered from slack was actually
 
 Okay, small accomplishment, but good way to end the day on: was able to render a message from the projects index page.
 
-I'm going to do a little styling.  I want to work on a basic template, that will include a drop down window for 'categories,' in addition to sign in, sign up, sign out and a home button.    
+I'm going to do a little styling.  I want to work on a basic template, that will include a drop down window for 'categories,' in addition to sign in, sign up, sign out and a home button.  
+
+At this point, I'm kind of messing around.  I working on some styling.  I added an image, and messing with some opacity.  Trying to figure out how to make it a back ground image.    
