@@ -62,3 +62,7 @@ I'm going to add rspec to my app.
   * Then ran: 'bundle exec rspec'
 
 As I build out features and functionality, try and include a test, to insure proper functionality.  
+
+Going to review associations, and figure out how I should build correct associations for dyi_app.  
+
+Adding a User migration, model, controller and routes, and adding user_id to projects table.  Then wire them together with appropriate association.  
