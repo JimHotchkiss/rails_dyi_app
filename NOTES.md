@@ -43,3 +43,22 @@ Wrote and ran my first test
   ~ Where :9 is the line we want tested.  
  * Got error to pass by including a simple validation at the model level
   ~ validates :title, presence: true
+
+I'm going to add rspec to my app.  
+  * I've updated my gem file: 'gem 'rspec-rails', '~> 3.0''
+  * ran 'bundle install'
+  * ran 'rails g rspec:install'
+  * created a file: spec/models/project_spec.rb
+   ~ and included:
+      require 'rails_helper'
+
+        describe Project do
+          it 'can be created' do
+            #project = Project.create!(title: "My title", description: "The post description")
+            project = Project.create!(title: "My title")
+            expect(project).to be_valid
+          end
+        end
+  * Then ran: 'bundle exec rspec'
+
+As I build out features and functionality, try and include a test, to insure proper functionality.  
