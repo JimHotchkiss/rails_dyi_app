@@ -36,8 +36,10 @@ Preparing for work today, I was reviewing one of the first lessons, and decided 
 
 Wrote and ran my first test
  * test "should not save project without title" do
-     project = Porject.new
-     assert_not project.save
+     project = Project.new
+     assert_not project.save, 'Saved project with out title'
    end
  * terminal ~> rails test test/models/project_test.rb:9
   ~ Where :9 is the line we want tested.  
+ * Got error to pass by including a simple validation at the model level
+  ~ validates :title, presence: true
