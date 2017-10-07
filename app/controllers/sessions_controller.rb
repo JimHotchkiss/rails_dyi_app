@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
   def create
     @user =  User.find_by(username: params[:username])
 
-    if session[:use_id].present?
+    if logged_in?
       redirect_to root_path
     end
       if params[:username].nil? || params[:username] == ""

@@ -83,6 +83,12 @@ Okay, so I've been reviewing and practicing on a dummy app, and I'm ready to han
     ~ session form view
       * new
 
-So I've got the signup, login/logout up and running 
+So I've got the signup, login/logout up and running
 I still need to do login with github, facebook, etc.  
 Also, I need to refactor the views and incorporate partials and helpers.  
+  * I want to include, in ApplicationController,
+    ~ authentication_required
+    ~ logged_in?
+    ~ current_user
+    # These method do no permeate to your Actioview, unless you add
+      * helper_method :current_user, :logged_in?

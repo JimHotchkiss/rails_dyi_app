@@ -55,6 +55,12 @@
       </nav>
     </nav> <!-- end of 'class="navbar navbar-light"'-->
 
+    <% if logged_in? %>
+      <div class="container">
+        <h3>Welcome, <%= current_user.username %></h3>
+      </div>
+    <% end %>
+
     <!-- Add logout link. Move this to helper.-->
 
     <%= yield %>
