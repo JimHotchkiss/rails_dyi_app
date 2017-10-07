@@ -82,3 +82,7 @@ Okay, so I've been reviewing and practicing on a dummy app, and I'm ready to han
       * sessions#destroy
     ~ session form view
       * new
+
+So I've got the signup, login/logout up and running 
+I still need to do login with github, facebook, etc.  
+Also, I need to refactor the views and incorporate partials and helpers.  
