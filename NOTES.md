@@ -65,4 +65,12 @@ As I build out features and functionality, try and include a test, to insure pro
 
 Going to review associations, and figure out how I should build correct associations for dyi_app.  
 
-Adding a User migration, model, controller and routes, and adding user_id to projects table.  Then wire them together with appropriate association.  
+Adding a User migration, model, controller and routes, and adding user_id to projects table.  Then wire them together with appropriate association.
+
+Now, that I have a user, do I want to add omniauth authentication?  
+
+Okay, so I've been reviewing and practicing on a dummy app, and I'm ready to handle user signup, login, logout.
+  * First, let me handle secure_password
+    ~ bcrypt to gem file
+    ~ has_secure_password in User model
+    ~ add password_digest to users table
