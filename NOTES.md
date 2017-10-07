@@ -74,3 +74,11 @@ Okay, so I've been reviewing and practicing on a dummy app, and I'm ready to han
     ~ bcrypt to gem file
     ~ has_secure_password in User model
     ~ add password_digest to users table
+  * Then handle session login
+    ~ session routes
+    ~ session controller
+      * sessions#new
+      * sessions#create
+      * sessions#destroy
+    ~ session form view
+      * new
