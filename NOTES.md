@@ -92,3 +92,5 @@ Also, I need to refactor the views and incorporate partials and helpers.
     ~ current_user
     # These method do no permeate to your Actioview, unless you add
       * helper_method :current_user, :logged_in?
+
+Hi, Maria! 

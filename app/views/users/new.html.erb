@@ -1,5 +1,6 @@
 <div class="container">
   <%= form_for @user do |f| %>
+  <% binding.pry %>
     <%= f.label :username %>
     <%= f.text_field :username %><br>
     <%= f.label :email %>
