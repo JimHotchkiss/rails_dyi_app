@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'projects#index'
 
-  resources :category, only: [:show] do
+  resources :categories, only: [:show] do
     resources :projects, only: [:show, :index]
     # this will give the user the ability to search
     # categories/:id/projects or categories/:id/projects/:id
