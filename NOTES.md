@@ -93,4 +93,11 @@ Also, I need to refactor the views and incorporate partials and helpers.
     # These method do no permeate to your Actioview, unless you add
       * helper_method :current_user, :logged_in?
 
-Hi, Maria! 
+So I'm going to build the Project/Category/ProjectCategory association. This is a has_many, through relationship, and I will need to build a join table.  
+  * Nest routes project[category]
+  * Migration
+  * Model
+  * Macroprogramming
+  * belongs_to :user, ~> option (it's in the dummy app)
+  * allow_nested_attributes (build method to do this)
+  * Views form
