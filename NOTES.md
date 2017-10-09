@@ -101,3 +101,12 @@ So I'm going to build the Project/Category/ProjectCategory association. This is 
   * belongs_to :user, ~> option (it's in the dummy app)
   * allow_nested_attributes (build method to do this)
   * Views form
+
+All working well. Going to style the form page a little, and then move on to link_to categories and projects.
+
+Going to add the project index page. Here the user will be able to search categories or specific projects.  
+
+I will link to a project show page
+I will link to a category show page.
+  * Going to refactor with a users#new view with a partial.
+  * Also, adding some bootstrap styling to signup page.  
