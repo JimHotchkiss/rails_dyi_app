@@ -18,7 +18,22 @@ class ProjectsController < ApplicationController
   end
 
   def show
-    @project = Project.find(params[:id])
+    @project = find_project
+  end
+
+  def edit
+    @project = find_project
+  end
+
+  def update
+    @project = find_project
+    if current_user
+      @project.update(project_params)
+      redirect_to project_path
+    else
+      flash[:notice] = "You are not authorized to edit this project"
+      redirect to edit_project_path
+    end
   end
 
   private
@@ -27,5 +42,8 @@ class ProjectsController < ApplicationController
     params.require(:project).permit(:title, :description, category_ids:[], categories_attributes: [:name])
   end
 
+  def find_project
+    Project.find(params[:id])
+  end
 
 end

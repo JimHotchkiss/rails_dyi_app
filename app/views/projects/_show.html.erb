@@ -10,6 +10,10 @@ Categories:
 Title: <%= @project.title %><br></br>
 Description: <%= @project.description %><br></br>
 
+<% if current_user %>
+  <%= link_to 'Edit', edit_project_path %>
+<% end %>
+
 __________________________________________________________________________________________________________________________________________________________
 
 <%= link_to "New Comment", new_project_comment_path(@project) %>

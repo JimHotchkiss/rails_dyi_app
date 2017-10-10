@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :comments, only: [:create]
   root 'projects#index'
 
-  resources :projects, only: [:new, :create, :show] do
+  resources :projects, only: [:new, :create, :show, :edit, :update, :destroy] do
     resources :comments, only: [:show, :index, :new]
   end
 

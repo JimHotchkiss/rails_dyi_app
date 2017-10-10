@@ -1,0 +1,7 @@
+<%= flash[:notice] %>
+<div class="container">
+  <p style="color:red">Edit your DYI project</p>
+  <%= bootstrap_form_for(@project) do |f| %>
+      <%= render 'form', f: f %>
+  <% end %>
+</div>
