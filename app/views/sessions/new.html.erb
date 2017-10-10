@@ -1,5 +1,7 @@
+<div class="container">
+  <p style="color:blue"><%= flash[:notice] %></p>
+</div>
 <!-- new login -->
-<br></br>
 <div class="container">
   <%= form_tag({controller: 'sessions', action: 'new', method: 'POST'}) do %>
     <%= label_tag :username  %>

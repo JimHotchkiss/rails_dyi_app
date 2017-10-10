@@ -122,3 +122,4 @@ To do this I will need to have nested resource,
     end
 Then I will need to create a comments table, model, controller and views.
   * Additionally, I want to create div with a scrollbar.  
+Also, going to add two flash[:alerts] for Users validations
