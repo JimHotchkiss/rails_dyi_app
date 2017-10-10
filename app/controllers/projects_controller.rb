@@ -18,17 +18,13 @@ class ProjectsController < ApplicationController
   end
 
   def show
-    @project = find_project
+    @project = Project.find(params[:id])
   end
 
   private
 
   def project_params
     params.require(:project).permit(:title, :description, category_ids:[], categories_attributes: [:name])
-  end
-
-  def find_project
-    Project.find(params[:id])
   end
 
 

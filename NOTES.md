@@ -123,3 +123,5 @@ To do this I will need to have nested resource,
 Then I will need to create a comments table, model, controller and views.
   * Additionally, I want to create div with a scrollbar.  
 Also, going to add two flash[:alerts] for Users validations
+
+So my nested resources is working. I need to now do two things, make sure a user can edit/delete their project(s), and a user can edit/delete their comment(s)
