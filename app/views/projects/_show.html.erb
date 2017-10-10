@@ -3,9 +3,21 @@ ________________________________________________________________________________
 
 Categories:
 <% @project.categories.each do |category| %> |
-  <%= category.name %>
+  <%= link_to category.name, category_path(category) %>
 <% end %>
 <br></br>
 
 Title: <%= @project.title %><br></br>
 Description: <%= @project.description %><br></br>
+
+__________________________________________________________________________________________________________________________________________________________
+
+<%= link_to "New Comment", new_project_comment_path(@project) %>
+<p>Comments:</p>
+<% @project.comments.each do |comment| %>
+  <div class="container" style="border : solid 2px #ff0000; color:blue; padding : 4px; width : 800px; height : 200px; overflow : auto; ">
+
+     ~> <%= comment.description %>
+
+  </div>
+<% end %>

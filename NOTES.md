@@ -109,4 +109,16 @@ Going to add the project index page. Here the user will be able to search catego
 I will link to a project show page
 I will link to a category show page.
   * Going to refactor with a users#new view with a partial.
-  * Also, adding some bootstrap styling to signup page.  
+  * Also, adding some bootstrap styling to signup page.
+
+I pretty sure I'm using the nested routes wrong.
+    * The idea was when I looked at a category, categories/:id, I could then pick a project, seemingly, nested in the category, categories/:id/projects/:id.  However, there is nothing nested. Just a link_to categories/:id, and a link_to projects/:id
+
+So, today I'm going to establish my nested resources. Namely, I want the user to be able to look up a project, with projects/:id, and then make a comment on that project, with projects/:id/comments/new.  
+
+To do this I will need to have nested resource,
+  * resources :projects, only: [:show, :index] do
+      resources :comments, only: [:show, :index, :new]
+    end
+Then I will need to create a comments table, model, controller and views.
+  * Additionally, I want to create div with a scrollbar.  
