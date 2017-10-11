@@ -10,7 +10,8 @@ Categories:
 Title: <%= @project.title %><br></br>
 Description: <%= @project.description %><br></br>
 
-<% if current_user %>
+
+<% if @project.user_id == current_user.id %>
   <%= link_to 'Edit', edit_project_path %>
 <% end %>
 

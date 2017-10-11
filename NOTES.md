@@ -126,4 +126,8 @@ Also, going to add two flash[:alerts] for Users validations
 
 So my nested resources is working. I need to now do two things, make sure a user can edit/delete their project(s), and a user can edit/delete their comment(s)
 
-I want to figure out a way to make 
+I want to figure out a way to assign the user_id to a project that is created.  
+
+I ran into a small problem. When I am creating a new project, if I don't fill out the category portion (not the checkbox), an empty space gets created.  
+
+I'm going to work on adding the sign in through github today, and correct the categories_attributes= method,
