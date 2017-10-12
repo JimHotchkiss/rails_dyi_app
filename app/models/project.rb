@@ -5,6 +5,7 @@ class Project < ApplicationRecord
   has_many :comments
 
   validates :title, presence: true
+  validates :description, presence: true
 
   def categories_attributes=(category_attributes)
     category_attributes.values.each do |category_attribute|
