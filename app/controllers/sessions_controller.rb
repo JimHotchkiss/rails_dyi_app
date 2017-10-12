@@ -4,22 +4,10 @@ class SessionsController < ApplicationController
   end
 
   def create
-    # if auth_hash is true, we know user is signing in using Oauth
     if auth_hash = request.env['omniauth.auth']
-      oauth_username = request.env['omniauth.auth']['info']['name']
-    # if we find them, using username, in the db, log them in
-      if user = User.find_by(username: oauth_username)
-        session[:user_id] = user.id
-        redirect_to root_path, notice: ', you are signed in'
-      else
-    # if we can't find them, instantiate a user, and give them a random password
-        user = User.new(username: oauth_username, password: SecureRandom.hex)
-
-        if user.save
-          session[:user_id] = user.id
-          redirect_to root_path, notice: 'you have signed up'
-        end
-      end
+      user = User.find_or_create_by_omniauth(auth_hash)
+      session[:user_id] = user.id
+      redirect_to root_path, notice: ', you are signed in'
 
     else
     # else we are gong to use our normal authentication login
