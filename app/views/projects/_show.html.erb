@@ -10,10 +10,9 @@ Categories:
 Title: <%= @project.title %><br></br>
 Description: <%= @project.description %><br></br>
 
-
-<% if @project.user_id == current_user.id %>
-  <%= link_to 'Edit', edit_project_path %>
-<% end %>
+  <% if @project.user_id == current_user.id %>
+      <%= link_to 'Edit', edit_project_path %> | <%= link_to "Delete", @project, method: :delete, data: { confirm: "Really?" } %>
+  <% end %>
 
 __________________________________________________________________________________________________________________________________________________________
 
