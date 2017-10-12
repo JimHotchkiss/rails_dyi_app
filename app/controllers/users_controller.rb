@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     if @user.save
       user_id = @user.id
       session[:user_id] = user_id
-      redirect_to root_path
+      redirect_to root_path, notice: ', you are signed in'
     else
       render :new
     end
