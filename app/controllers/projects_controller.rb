@@ -21,6 +21,7 @@ class ProjectsController < ApplicationController
 
   def show
     @project = find_project
+    @project_comments = @project.comments.most_recent(@project.comments.count)
   end
 
   def edit
