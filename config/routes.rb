@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'projects#index'
 
   resources :projects, only: [:new, :create, :show, :edit, :update, :destroy] do
-    resources :comments, only: [:show, :index, :new]
+    resources :comments, only: [:new]
   end
 
   get '/auth/:provider/callback', to: 'sessions#create'

@@ -10,7 +10,6 @@ class SessionsController < ApplicationController
       redirect_to root_path, notice: ', you are signed in'
 
     else
-    # else we are gong to use our normal authentication login
       @user = User.find_by(username: params[:username])
 
       if @user
@@ -19,7 +18,7 @@ class SessionsController < ApplicationController
         session[:user_id] = user_id
         redirect_to root_path, notice: ', you are signed in'
       else
-        redirect_to root_path, notice: 'you need to be signed up'
+        redirect_to root_path, warning: 'you need to be signed up'
       end
     end
 

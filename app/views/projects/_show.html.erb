@@ -1,4 +1,6 @@
-
+<div class="container">
+  <%= flash[:warning] %>
+</div>
 __________________________________________________________________________________________________________________________________________________________
 
 <p style="display:inline; font-weight:bold;">Categories:</p><% @project.categories.each do |category| %> |
@@ -21,9 +23,10 @@ ________________________________________________________________________________
 <p style="font-weight:bold;">Comments:</p>
 <% @project_comments.each do |comment| %>
   <div class="container" style="border : solid 2px #ff0000; color:blue; padding : 4px; width : 800px; height : 200px; overflow : auto; ">
+      <h2 style="color:red"><%= flash[:notice] %></h2>
    ~> <%= comment.description %><br>
-   <% if comment.user_id == current_user.id %>
-       <%= link_to 'Edit', edit_project_comment_path(comment.project_id) %> | <%= link_to "Delete", comment, method: :delete, data: { confirm: "WAIT! Seriously?" } %>
-   <% end %>
+
+       <%= link_to 'Edit', edit_comment_path(comment) %> | <%= link_to "Delete", comment, method: :delete, data: { confirm: "WAIT! Seriously?" } %>
+
  </div><br>
 <% end %>

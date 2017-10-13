@@ -17,20 +17,30 @@ class CommentsController < ApplicationController
   end
 
   def edit
-    @comment = Comment.find(params[:project_id])
+    @comment = Comment.find(params[:id])
   end
 
   def update
     @comment = Comment.find(params[:id])
-    @comment.update(comment_params)
-    @comment.user_id = current_user.id
-    @comment.save
-    redirect_to project_path(@comment.project_id)
+
+    if @comment.user_id == current_user.id
+      @comment.update(comment_params)
+      @comment.user_id = current_user.id
+      @comment.save
+      redirect_to project_path(@comment.project_id)
+    else
+      redirect_to project_path(@comment.project_id), notice: 'You are not authorized to edit or delete this comment'
+    end
   end
 
   def destroy
-    Comment.find(params[:id]).destroy
-    redirect_to project_comments_path
+    @comment = Comment.find(params[:id])
+    if @comment.user_id == current_user.id
+      @comment.destroy
+      redirect_to project_path(@comment.project_id)
+    else
+      redirect_to project_path(@comment.project_id), notice: 'You are not authorized to edit or delete this comment'
+    end 
   end
 
   private
