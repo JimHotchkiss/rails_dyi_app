@@ -1,4 +1,6 @@
-<p style="color:red"><%= flash[:notice]%></p>
+<div class="container">
+  <%= render 'errors' %>
+</div>
 <div class="container">
   <p style="color:red">Sign up:</p>
   <%= bootstrap_form_for(@user) do |f| %>

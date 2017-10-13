@@ -1,12 +1,12 @@
-<% if @project.errors.any? %>
+<% if @user.errors.any? %>
   <div id="error_explanation">
     <p style="color:red">
-      <%= pluralize(@project.errors.count, "error") %>
+      <%= pluralize(@user.errors.count, "error") %>
       prohibited this project from being saved:
     </p>
 
     <ul>
-    <% @project.errors.full_messages.each do |msg| %>
+    <% @user.errors.full_messages.each do |msg| %>
       <li><%= msg %></li>
     <% end %>
     </ul>

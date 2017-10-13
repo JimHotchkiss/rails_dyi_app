@@ -5,8 +5,12 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @comment = Comment.create(comment_params)
-    redirect_to project_path(@comment.project_id)
+    @comment = Comment.new(comment_params)
+    if @comment.save
+      redirect_to project_path(@comment.project_id)
+    else
+      render :new
+    end
   end
 
   private
