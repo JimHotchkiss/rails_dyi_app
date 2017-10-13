@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :comments, only: [:create]
+  resources :comments, only: [:create, :edit, :update, :destroy]
   root 'projects#index'
 
   resources :projects, only: [:new, :create, :show, :edit, :update, :destroy] do

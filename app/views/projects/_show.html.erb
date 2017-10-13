@@ -21,6 +21,9 @@ ________________________________________________________________________________
 <p style="font-weight:bold;">Comments:</p>
 <% @project_comments.each do |comment| %>
   <div class="container" style="border : solid 2px #ff0000; color:blue; padding : 4px; width : 800px; height : 200px; overflow : auto; ">
-   ~> <%= comment.description %>
+   ~> <%= comment.description %><br>
+   <% if comment.user_id == current_user.id %>
+       <%= link_to 'Edit', edit_project_comment_path(comment.project_id) %> | <%= link_to "Delete", comment, method: :delete, data: { confirm: "WAIT! Seriously?" } %>
+   <% end %>
  </div><br>
 <% end %>

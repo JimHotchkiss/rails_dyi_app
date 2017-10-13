@@ -12,17 +12,14 @@ class SessionsController < ApplicationController
     else
     # else we are gong to use our normal authentication login
       @user = User.find_by(username: params[:username])
-      if logged_in?
-        redirect_to root_path
-      elsif params[:username].nil? || params[:username] == ""
-        redirect_to session_login_path, notice: "Please complete login form"
-      elsif @user.nil?
-        redirect_to root_path, notice: "you need to signup"
-      else
+
+      if @user
         return redirect_to root_path unless @user.authenticate(params[:password])
         user_id = @user.id
         session[:user_id] = user_id
         redirect_to root_path, notice: ', you are signed in'
+      else
+        redirect_to root_path, notice: 'you need to be signed up'
       end
     end
 
